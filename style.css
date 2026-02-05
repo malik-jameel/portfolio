@@ -122,44 +122,216 @@ section {
   transition: 0.8s;
 }
 
-/* ===== SKILLS & PROJECTS ===== */
-.skills-list,
+/* ===== SKILLS SECTION ===== */
+.skills {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.skills h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+
+.skills-group {
+  margin-bottom: 40px;
+}
+
+.skills-group h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #334155;
+}
+
+/* Dark mode */
+body.dark .skills-group h3 {
+  color: #e5e7eb;
+}
+
+
+/* ===== PROJECT CARDS ===== */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   max-width: 1200px;
   margin: auto;
 }
 
-.skill,
 .project {
-  background: #e5e7eb;
-  padding: 20px;
-  border-radius: 8px;
-  transition: 0.3s;
+  background: #eef2f7;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.skill:hover,
+/* subtle top accent line */
+.project::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+}
+
+/* hover effect */
 .project:hover {
-  transform: scale(1.05);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
+.project h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #0f172a;
+}
+
+.project p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #475569;
+}
+
+/* ===== LIVE PREVIEW BUTTON ===== */
 .project a {
   display: inline-block;
+  margin-top: 15px;
+  padding: 8px 18px;
   background-color: #2563eb;
   color: #ffffff;
-  padding: 8px 16px;
-  border-radius: 20px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
   text-decoration: none;
-  font-size: 14px;
-  margin-top: 10px;
   transition: all 0.3s ease;
 }
 
 .project a:hover {
   background-color: #1e40af;
   transform: translateY(-2px);
+}
+
+/* ===== DARK MODE SUPPORT ===== */
+body.dark .project {
+  background: #1e293b;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+body.dark .project h3 {
+  color: #e5e7eb;
+}
+
+body.dark .project p {
+  color: #cbd5f5;
+}
+
+/* ===== TECH STACK BADGES ===== */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.badge {
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 999px;
+  color: #fff;
+  letter-spacing: 0.3px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.badge i {
+  font-size: 14px;
+  margin-right: 6px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.badge.react i {
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}
+
+/* Individual colors */
+.badge.react {
+  background: #61dafb;
+  color: #0f172a;
+}
+
+.badge.node {
+  background: #16a34a;
+}
+
+.badge.mongo {
+  background: #15803d;
+}
+
+.badge.express {
+  background: #334155;
+}
+
+.badge.html {
+  background: #e34c26;
+}
+
+.badge.css {
+  background: #2563eb;
+}
+
+.badge.js {
+  background: #facc15;
+  color: #0f172a;
+}
+
+.badge.tailwind {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+.badge.mongoose {
+  background: #800020;
+}
+
+.badge.git {
+  background: #f34f29;
+}
+
+.badge.github {
+  background: #0f172a;
+}
+
+.badge.postman {
+  background: #ff6c37;
+}
+
+
+
+/* Dark mode */
+body.dark .badge {
+  opacity: 0.9;
 }
 
 
